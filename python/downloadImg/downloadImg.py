@@ -31,7 +31,11 @@ def download_image(image_url, save_path):
 def get_image_and_next_page_urls(page_url, img_selector, next_page_selector):
     response = None
     try:
-        response = requests.get(page_url)
+        headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+}
+
+        response = requests.get(page_url, headers)
     except requests.exceptions.RequestException as e:
         print(f"Error downloading image: {e}")
         time.sleep(60)
@@ -78,7 +82,7 @@ def getImage(page_url, img_selector, next_page_selector,save_path):
         print("Image not found")
 
 
-page_prefix = "https://"
-page_outfix = ""
+page_prefix = "https://www.wnacg.com/"
+page_outfix = "photos-view-id-24401811.html"
 
 getImage(page_prefix+ page_outfix, img_selector, next_page_selector,save_path)
