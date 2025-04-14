@@ -83,6 +83,6 @@ def getImage(page_url, img_selector, next_page_selector,save_path):
 
 
 page_prefix = "https://www.wnacg.com/"
-page_outfix = "photos-view-id-24401811.html"
+page_outfix = ""
 
 getImage(page_prefix+ page_outfix, img_selector, next_page_selector,save_path)
